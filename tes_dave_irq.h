@@ -1,8 +1,3 @@
-/****************************************************************************
- *  Copyright (C) TES Electronic Solutions GmbH
- *  Project : D/AVE 2D
- ****************************************************************************/
-
 #ifndef TES_DAVE_IRQ_H_
 #define TES_DAVE_IRQ_H_
 

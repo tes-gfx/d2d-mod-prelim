@@ -1,9 +1,3 @@
-/****************************************************************************
- *  Copyright (C) TES Electronic Solutions GmbH
- *  Project : D/AVE 2D
- *  Purpose : Device and module specific defines
- ****************************************************************************/
-
 #ifndef TES_DAVE_MODULE_H_
 #define TES_DAVE_MODULE_H_
 #include <linux/cdev.h>

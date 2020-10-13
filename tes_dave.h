@@ -1,9 +1,3 @@
-/****************************************************************************
- *  Copyright (C) TES Electronic Solutions GmbH
- *  Project : D/AVE 2D
- *  Purpose : Public definitions of the kernel module
- ****************************************************************************/
-
 #ifndef __TES_DAVE_H__
 #define __TES_DAVE_H__
 

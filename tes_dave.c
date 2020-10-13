@@ -1,9 +1,3 @@
-/****************************************************************************
- *  Copyright (C) TES Electronic Solutions GmbH
- *  Project : D/AVE 2D
- *	Purpose : Main linux kernel module. Handles initialization and fops.
- ****************************************************************************/
-
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/ioport.h>
