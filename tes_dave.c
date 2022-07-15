@@ -46,7 +46,7 @@ static int dave2d_mmap(struct file *fp, struct vm_area_struct *vma)
 	vma->vm_flags &= ~VM_PFNMAP;
 	vma->vm_pgoff = 0;
 
-	ret = dma_mmap_writecombine(dev->device, vma,
+	ret = dma_mmap_wc(dev->device, vma,
 				    dev->mem_base_virt, dev->mem_base_phys,
 				    vma->vm_end - vma->vm_start);
 
@@ -253,7 +253,7 @@ static int dave2d_probe(struct platform_device *pdev)
 	}
 	
 	dave->mem_span = 16*1024*1024;
-	dave->mem_base_virt = dma_alloc_writecombine(dave->device, dave->mem_span, &dave->mem_base_phys,  GFP_KERNEL | __GFP_NOWARN);
+	dave->mem_base_virt = dma_alloc_wc(dave->device, dave->mem_span, &dave->mem_base_phys,  GFP_KERNEL | __GFP_NOWARN);
 	if(!dave->mem_base_virt) {
 		dev_err(&pdev->dev, "allocating video memory failed\n");
 		goto IO_VID_FAILED;
@@ -282,7 +282,7 @@ static int dave2d_probe(struct platform_device *pdev)
 IRQ_FAILED:
 	dave2d_shutdown_device(dave);
 DEV_FAILED:
-	dma_free_writecombine(dave->device, dave->mem_span, dave->mem_base_virt, dave->mem_base_phys);
+	dma_free_wc(dave->device, dave->mem_span, dave->mem_base_virt, dave->mem_base_phys);
 IO_VID_FAILED:
 	iounmap(dave->base_virt);
 REQ_VID_FAILED:
